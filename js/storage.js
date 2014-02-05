@@ -1,5 +1,6 @@
 /*
- * Copyright (C) 2014 SurveyorK
+ * This file is part of Metro Offline Timetable
+ * Copyright (C) 2014 Chien-Yu Chen <abc9070410@gmail.com>
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
