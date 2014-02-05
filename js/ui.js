@@ -885,6 +885,7 @@ function getHTMLOfNavDiv()
     string += getHTMLOfListItem( "icon star mini", ID_FAVOURITE, S_FAVOURITE[gLanguageIndex] );
     string += getHTMLOfListItem( "icon folder mini", ID_RECORD, S_RECORD[gLanguageIndex] );
     string += getHTMLOfListItem( "icon settings mini", ID_OPTION, S_OPTION[gLanguageIndex] );
+    string += getHTMLOfListItem( "icon lamp mini", ID_Q_AND_A, S_Q_AND_A[gLanguageIndex] );
     
     return string;
 }
@@ -1642,13 +1643,15 @@ function getHTMLOfCommonSettingDiv( asSettingItem, abSelected )
     var string = "";
     
     var bRemoveIOS = false,
-        bRemoveAndroid = false;
+        bRemoveAndroid = false,
+        bRemoveWindows8 = false;
         
     if ( asSettingItem[0].toString() == S_STYLE_ARRAY[0].toString() )
     {
         if ( giPlatform != PLATFORM_DESKTOP )
             bRemoveIOS = true; // IOS style exists some problems in some platforms
-        
+        if ( giPlatform == PLATFORM_ANDROID )
+            bRemoveWindows8 = true; // win8 style exists no nav on Android device
         if ( giPlatform == PLATFORM_FIREFOXOS )
             bRemoveAndroid = true; // footer shakes on the Firefox OS device
     }
@@ -1656,7 +1659,8 @@ function getHTMLOfCommonSettingDiv( asSettingItem, abSelected )
     for ( var i = 0; i < asSettingItem.length; i ++ )
     {
         if ( ( bRemoveIOS && i == PLATFORM_IOS ) ||
-             ( bRemoveAndroid && i == PLATFORM_ANDROID ) )
+             ( bRemoveAndroid && i == PLATFORM_ANDROID ) ||
+             ( bRemoveWindows8 && i == PLATFORM_WP ) )
             continue;
     
         var sIcon = abSelected[i] ? "icon check" : "icon target";
