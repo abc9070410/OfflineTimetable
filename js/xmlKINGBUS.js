@@ -1,5 +1,5 @@
 ﻿/*
- * This file is part of Metro Offline Timetable
+ * This file is part of Offline Timetable
  * Copyright (C) 2014 Chien-Yu Chen <abc9070410@gmail.com>
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
