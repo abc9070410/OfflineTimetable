@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<!--HTML5 doctype-->
+<html>
+ 
+    <head>
+        <title>Timetable</title>
+        <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <link rel="stylesheet" type="text/css" href="css/icons.css" />
+        <link rel="stylesheet" type="text/css" href="css/af.ui.css" />
+        <!-- uncomment for apps
+        <script type="text/javascript" charset="utf-8" src="js/indelxdk.js"></script>       
+        -->
+        <script type="text/javascript" charset="utf-8" src="js/ui/appframework.ui.min.js"></script>
+        <script type="text/javascript" charset="utf-8" src="js/language.js"></script>
+        <script type="text/javascript" charset="utf-8" src="js/global.js"></script>
+        <script type="text/javascript" charset="utf-8" src="js/station.js"></script>
+        <script type="text/javascript" charset="utf-8" src="js/storage.js"></script>
+        <script type="text/javascript" charset="utf-8" src="js/distance.js"></script>
+        <script type="text/javascript" charset="utf-8" src="js/price.js"></script>
+        <script type="text/javascript" charset="utf-8" src="js/parse.js"></script>
+        <script type="text/javascript" charset="utf-8" src="js/common.js"></script>
+        <script type="text/javascript" charset="utf-8" src="js/search.js"></script>
+        <!-- 
+        <script type="text/javascript" charset="utf-8" src="js/FileSaver.js"></script> 
+        -->
+        <script type="text/javascript" charset="utf-8" src="js/xmlTRA.js"></script>
+        <script type="text/javascript" charset="utf-8" src="js/xmlTHSR.js"></script>
+        <script type="text/javascript" charset="utf-8" src="js/xmlKINGBUS.js"></script>
+        <script type="text/javascript" charset="utf-8" src="js/xmlUBUS.js"></script>
+        <script type="text/javascript" charset="utf-8" src="js/tool.js"></script>
+        <script type="text/javascript" charset="utf-8" src="js/ui.js"></script>
+        <!-- emulate touch on desktop browsers only -->
+        <script>
+            if (!((window.DocumentTouch && document instanceof DocumentTouch) || 'ontouchstart' in window)) {
+                var script = document.createElement("script");
+                script.src = "plugins/af.desktopBrowsers.js";
+                var tag = $("head").append(script);
+                
+                //$.os.android = true; //let's make it run like an android device
+                $.os.desktop = true;
+                
+                
+                //$.os.android = false;
+                //$.os.ios7 = true;
+                $.ui.useOSThemes = true; // set the os theme 
+            }
+            
+            setStyle();
+            $.ui.useOSThemes = true;
+
+        </script>
+        <script type="text/javascript">
+ 
+            var webRoot = "./";
+            $.ui.autoLaunch = false; //By default, it is set to true and you're app will run right away.  We set it to false to show a splashscreen
+            /* This function runs when the body is loaded.*/
+            
+            var alreadyInitialized = false; // ensure calling init() only one time
+            
+            var init = function () {
+                    if ( alreadyInitialized )
+                        return;
+                    
+                    window.setTimeout(function () {
+                        $.ui.launch();
+                    }, 1500);//We wait 1.5 seconds to call $.ui.launch after DOMContentLoaded fires
+                    
+                    //$.ui.showLoading=true; 
+                    
+                    initSetting();
+                    initUI();
+                    
+                    $.ui.backButtonText = S_BACK[gLanguageIndex];// We override the back button text to always say "Back"
+                    
+                    
+                    //showBackgroundImage( "bg_sunrise.jpg" );
+
+                    initData();
+                    
+                    //alert( getNumber( "04" ) );
+                    
+                    //log( getClosestStationIDs( 1022, 1202, CAR_KINGBUS ) );
+                };
+                
+            //if ( !navSupported() )
+                document.addEventListener("DOMContentLoaded", init, false);
+            
+            $.ui.ready(function () {
+                //This function will get executed when $.ui.launch has completed
+                
+                if ( navSupported() )
+                    $.ui.removeFooterMenu(); // disable navbar (footer) menu
+                
+                
+                
+                
+            });
+ 
+ 
+            /* This code is used for Intel native apps */
+            var onDeviceReady = function () {
+                //intel.xdk.device.hideSplashScreen();
+                checkLocale();
+                
+                //$.ui.disableNativeScrolling();
+                
+                init();
+            };
+            //document.addEventListener("intel.xdk.device.ready", onDeviceReady, false);
+            document.addEventListener('deviceready', onDeviceReady, false);
+            
+            window.addEventListener("hashchange", onHashChange, false);
+            
+            function onHashChange()
+            {
+                var hash = location.hash;
+                //alert( "id = " + hash  );
+                
+                changeHash( hash.substring( 1, hash.length ) );
+             
+            }
+            
+            
+        </script>
+    </head>
+ 
+    <body>
+        <div id="afui"> <!-- this is the main container div.  This way, you can have only part of your app use UI -->
+            <!-- this is the header div at the top -->
+
+            <div id="content">
+               
+            </div>
+            <!-- bottom navbar. Add additional tabs here -->
+            <div id="navbar">
+                <div class="horzRule"></div>
+                <a href="#main" id='navbar_home'>請稍後...</a>
+            </div>
+            <!-- this is the default left side nav menu.  If you do not want any, do not include these -->
+            
+        </div>
+        
+        <!-- used for Kingbus -->
+        <bus>
+            <trainInfoXml>
+                <startTimeInfoXml></startTimeInfoXml>
+                <endTimeInfoXml></endTimeInfoXml>
+            </trainInfoXml>
+        </bus>
+        
+    </body>
+</html>
