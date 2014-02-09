@@ -40,7 +40,7 @@ var PLATFORM_IOS = 2;
 var PLATFORM_IOS_7 = 3;
 var PLATFORM_FIREFOXOS = 4;
 var PLATFORM_DESKTOP = 5;
-var giPlatform = PLATFORM_ANDROID;
+var giPlatform = PLATFORM_DESKTOP;
 
 // page category
 var PAGE_SEARCH = "0";

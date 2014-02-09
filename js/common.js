@@ -699,7 +699,11 @@ function getRelatedUrlByIndex( index )
 {
     if ( S_RELATED_LINKS_ARRAY[index].toString() === S_GOOGLE_PLAY.toString() )
     {
-        return "http://play.google.com";
+        return "https://play.google.com/store/apps/details?id=sk.phonegap.timetable";
+    }
+    else if ( S_RELATED_LINKS_ARRAY[index].toString() === S_CHROME_WEB_STORE.toString() )
+    {
+        return "https://chrome.google.com/webstore";
     }
     else if ( S_RELATED_LINKS_ARRAY[index].toString() === S_FIREFOX_MARKETPLACE.toString() )
     {
