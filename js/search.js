@@ -264,9 +264,16 @@ function transferConformed( resultA, resultB )
     var sCarClassA = getTrainInfoFromResult( resultA ).CarClass;
     var sCarClassB = getTrainInfoFromResult( resultB ).CarClass;
     
+    var sCarTrainA = getTrainInfoFromResult( resultA ).Train;
+    var sCarTrainB = getTrainInfoFromResult( resultB ).Train;
+    
     var iMinTimeGapForTransportChange;
     
-    if ( sCarClassA == sCarClassB )
+    if ( sCarTrainA == sCarTrainB ) // do not care the time gap for the same train
+    {
+        iMinTimeGapForTransportChange = 0;
+    }
+    else if ( sCarClassA == sCarClassB )
     {
         iMinTimeGapForTransportChange = getMinuteOfTimeGap( giSamePlatformTimeGapIndex );
     }
