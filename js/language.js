@@ -226,8 +226,8 @@ var S_DOWN_SITE = new Array( '下車地點', 'Down Site', '下车地点', 'サ�
 var S_REVERSE_LOCATION = new Array( '車站互換', 'Switch', '车站互换', 'スイッチ', '스위치' );
 var S_NOT_FOUND = new Array( '此條件下無法取得適合路線', 'not found on current search conditions', '此条件下无法取得适合路线', '現在の検索条件には見られない', '현재 검색 조건 에서 찾을 수 없습니다' );
 var S_TIME_GAP_FOR_TRANSPORT_CHANGE = new Array( '轉乘時間間隔', 'Time Gap for transport change', '转乘时间间隔', '輸送の変更のための時間的ギャップ', '전송 변화를위한 시간 간격' );
-var S_SAME_PLATFORM = new Array( '相同系統 (例如台鐵轉台鐵)', 'Same Platform (ex. TRA -> TRA)', '相同系统（例如台铁转台铁）', '同じプラットフォーム（例： TRA - > TRA ）', '같은 플랫폼 ( 예 : TRA -> TRA )' );
-var S_DIFFERENT_PLATFORM = new Array( '不同系統 (例如台鐵轉高鐵)', 'Different Platform (ex. TRA -> THSR)', '不同系统（例如台铁转高铁）', '別のプラットフォーム（例： TRA - >高速鉄道）', '다른 플랫폼 ( 예 : TRA -> THSR )' );
+var S_SAME_PLATFORM = new Array( '相同系統 (例如台鐵轉台鐵)', 'Same Platform (ex. TRA -> TRA)', '相同系统（例如台铁转台铁）', '同じプラットフォーム（例： TRA ->  TRA ）', '같은 플랫폼 ( 예 : TRA -> TRA )' );
+var S_DIFFERENT_PLATFORM = new Array( '不同系統 (例如台鐵轉高鐵)', 'Different Platform (ex. TRA -> THSR)', '不同系统（例如台铁转高铁）', '別のプラットフォーム（例： TRA -> 高速鉄道）', '다른 플랫폼 ( 예 : TRA -> THSR )' );
 var S_MINUTES = new Array( '分鐘', 'minutes', '分钟', '分', '분' );
 var S_MORE_THAN = new Array( '至少', 'more than ', '至少', '超える', '이상' );
 
@@ -237,21 +237,24 @@ var S_DELETE_BACKGROUND_IMAGE = new Array( "刪除背景圖片", "Delete Backgro
 
 
 S_QUESTION_0 = new Array( "如何將高鐵、國光或統聯加入搜尋？", "How to search the route about THSR, UBus or KingBus ?", "如何将高铁，国光或统联加入搜寻？", "高速鉄道、UBUSまたはKingBus約ルートを検索する方法？", "THSR, UBus 또는 KingBus에 대한 경로를 검색하는 방법?" );
-S_ANSWER_0 = new Array( "選單 -> 選項 -> 交通工具種類 -> 選擇欲加入的交通工具。", "Menu -> Option -> Transport Category -> check the transport you like", "选单 - >选项 - >交通工具种类 - >选择欲加入的交通工具。", "メニュー -> オプション -> 交通カテゴリ -> あなたが好きな輸送をチェック", "메뉴 -> 옵션 -> 교통 카테고리 -> 당신이 좋아하는 교통 수단을 확인" );
+S_ANSWER_0 = new Array( "選單 -> 選項 -> 交通工具種類 -> 選擇欲加入的交通工具。", "Menu -> Option -> Transport Category -> choice the transport you like", "选单 -> 选项 -> 交通工具种类 -> 选择欲加入的交通工具。", "メメニュー -> オプション -> 交通カテゴリ -> 選択好きな輸送", "메뉴 -> 옵션 -> 교통 카테고리 -> 선택 당신이 좋아하는 전송" );
 
-S_QUESTION_1 = new Array( "如何改變字體大小？", "How to change the font size ?", "如何改变字体大小？", "フォントサイズを変更するには？", "글꼴 크기를 변경하는 방법 ?" );
-S_ANSWER_1 = new Array( "選單 -> 選項 -> 字體大小 -> 選擇適合的大小比例。", "Menu -> Option -> Font Size -> check the specific ratio", "选单 - >选项 - >字体大小 - >选择适合的大小比例。", "メニュー - >オプション - >フォントサイズ - >特定の比率をチェック", "메뉴 -> 옵션 -> 글꼴 크기 -> 특정 비율을 확인" );
+S_QUESTION_1 = new Array( "為何每次都只有五筆搜尋結果？", "Why only five search results ?", "", "", "" );
+S_ANSWER_1 = new Array( "為了搜尋速度預設只顯示五筆，若要增加數量可前往選單 -> 選項 -> 搜尋結果數量上限 -> 選擇數量。", "Default search result count are five for efficacy. You can go to Menu -> Option -> Transport Category -> choice the specific result count", "为了搜寻速度预设只显示五笔，若要增加数量可前往选单 -> 选项 -> 搜寻结果数量上限 -> 选择数量。", "メニュー -> オプション -> 交通カテゴリ -> 選択特定の結果数", "메뉴 -> 옵션 -> 교통 카테고리 -> 선택 특정 결과 수" );
 
-S_QUESTION_2 = new Array( "如何設置背景圖片？", "How to set the background image ?", "如何设置背景图片？", "どのように背景画像を設定するには？", "어떻게 배경 이미지를 설정하는 방법?" );
-S_ANSWER_2 = new Array( "選單 -> 選項 -> 背景圖片 -> 挑選一張喜歡的圖片。", "Menu -> Option -> Background Image -> Open one image from the storage", "选单 - >选项 - >背景图片 - >挑选一张喜欢的图片。", "メニュー - >オプション - >背景画像 - >ストレージからオープン1画像", "메뉴 -> 옵션 -> 배경 화면 -> 저장소에서 열기를 하나의 이미지" );
+S_QUESTION_2 = new Array( "如何改變字體大小？", "How to change the font size ?", "如何改变字体大小？", "フォントサイズを変更するには？", "글꼴 크기를 변경하는 방법 ?" );
+S_ANSWER_2 = new Array( "選單 -> 選項 -> 字體大小 -> 選擇適合的大小比例。", "Menu -> Option -> Font Size -> choice the specific ratio", "选单 -> 选项 -> 字体大小 -> 选择适合的大小比例。", "メニュー -> オプション -> フォントサイズ -> 選択を特定の割合", "메뉴 -> 옵션 -> 글꼴 크기 -> 선택 특정 비율" );
 
-S_QUESTION_3 = new Array( "若搜尋結果與官方資訊有出入時，該相信哪一個？", "Which one should I trust when the search result and the office information are different ?", "若搜寻结果与官方资讯有出入时，该相信哪一个？", "その1私は、検索結果とオフィス情報が異なる場合には信頼すべき？", "어느 I는 검색 결과와 사무실 정보가 다른 경우 신뢰해야 하는가?" );
-S_ANSWER_3 = new Array( "當然是官方資訊。", "The office information, of course.", "当然是官方资讯。", "もちろんオフィスの情報。", "물론 사무실 정보." );
+S_QUESTION_3 = new Array( "如何設置背景圖片？", "How to set the background image ?", "如何设置背景图片？", "どのように背景画像を設定するには？", "어떻게 배경 이미지를 설정하는 방법?" );
+S_ANSWER_3 = new Array( "選單 -> 選項 -> 背景圖片 -> 挑選一張喜歡的圖片。", "Menu -> Option -> Background Image -> Open one image from the storage", "选单 -> 选项 -> 背景图片 -> 挑选一张喜欢的图片。", "メニュー -> オプション -> 背景画像 -> ストレージからオープン1画像", "메뉴 -> 옵션 -> 배경 화면 -> 저장소에서 열기를 하나의 이미지" );
 
-S_QUESTION_4 = new Array( "若發現問題或程式錯誤，我該回報嗎？", "Should I report some problems or bugs found in this APP ?", "若发现问题或程式错误，我该回报吗？", "私はこのアプリで見つかったいくつかの問題やバグを報告する必要があります？", "나는이 APP에서 발견 된 일부 문제점이나 버그를보고해야합니까?" );
-S_ANSWER_4 = new Array( "若願意回報的話，作者會非常感謝，請寄至abc9070410@gmail.com", "The author would truly appreciate if you send it to abc907040@gmail.com", "若愿意回报的话，作者会非常感谢，请寄至abc9070410@gmail.com", "あなたはabc907040@gmail.comに送信した場合、著者はいただければ幸いです", "당신이 abc907040@gmail.com에 보내는 경우에 저자는 감사하겠습니다" );
+S_QUESTION_4 = new Array( "若搜尋結果與官方資訊有出入時，該相信哪一個？", "Which one should I trust when the search result and the office information are different ?", "若搜寻结果与官方资讯有出入时，该相信哪一个？", "その1私は、検索結果とオフィス情報が異なる場合には信頼すべき？", "어느 I는 검색 결과와 사무실 정보가 다른 경우 신뢰해야 하는가?" );
+S_ANSWER_4 = new Array( "當然是官方資訊。", "The office information, of course.", "当然是官方资讯。", "もちろんオフィスの情報。", "물론 사무실 정보." );
 
-S_QUESTION_ARRAY = new Array( S_QUESTION_0, S_QUESTION_1, S_QUESTION_2, S_QUESTION_3, S_QUESTION_4 );
-S_ANSWER_ARRAY = new Array( S_ANSWER_0, S_ANSWER_1, S_ANSWER_2, S_ANSWER_3, S_ANSWER_4 );
+S_QUESTION_5 = new Array( "若發現問題或程式錯誤，我該回報嗎？", "Should I report some problems or bugs found in this APP ?", "若发现问题或程式错误，我该回报吗？", "私はこのアプリで見つかったいくつかの問題やバグを報告する必要があります？", "나는이 APP에서 발견 된 일부 문제점이나 버그를보고해야합니까?" );
+S_ANSWER_5 = new Array( "若願意回報的話，作者會非常感謝，請寄至abc9070410@gmail.com", "The author would truly appreciate if you send it to abc907040@gmail.com", "若愿意回报的话，作者会非常感谢，请寄至abc9070410@gmail.com", "あなたはabc907040@gmail.comに送信した場合、著者はいただければ幸いです", "당신이 abc907040@gmail.com에 보내는 경우에 저자는 감사하겠습니다" );
+
+S_QUESTION_ARRAY = new Array( S_QUESTION_0, S_QUESTION_1, S_QUESTION_2, S_QUESTION_3, S_QUESTION_4, S_QUESTION_5 );
+S_ANSWER_ARRAY = new Array( S_ANSWER_0, S_ANSWER_1, S_ANSWER_2, S_ANSWER_3, S_ANSWER_4, S_ANSWER_5 );
 
  

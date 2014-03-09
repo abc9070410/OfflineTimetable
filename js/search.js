@@ -823,15 +823,44 @@ function getSumPriceList( resultsList )
     return aiPrice;
 }
 
+// check if resultsA is same as resultsB or not in general
+function isSameResults( resultsA, resultsB )
+{
+    var indexLastResultA = resultsA.length - 1;
+    var indexLastResultB = resultsB.length - 1;
+    
+    // only check the first result and the last result
+    return ( getTrainInfoFromResult( resultsA[0] ).Train == getTrainInfoFromResult( resultsB[0] ).Train && 
+         getTrainInfoFromResult( resultsA[indexLastResultA] ).Train == getTrainInfoFromResult( resultsB[indexLastResultB] ).Train );
+}
+
+// exist same results in resultsList
+function existDuplication( resultsList, results, indexResults )
+{
+    for ( var i = 0; i < indexResults; i ++ )
+    {
+        if ( isSameResults( resultsList[i], results ) )
+            return true;
+    }
+    
+    return false;
+}
+
 // input: ResultFromAtoB[][]
 // output: ResultFromAtoB[][]
 function mergeResultsList( resultsList )
 {
     var mergedResultsList = new Array();
     
+    var indexMerged = 0;
     for ( var i = 0; i < resultsList.length; i ++ )
     {
-        mergedResultsList[i] = mergeResults( resultsList[i] );
+        var tempResults = mergeResults( resultsList[i] );
+        
+        if ( !existDuplication( mergedResultsList, tempResults, indexMerged ) )
+        {
+            mergedResultsList[indexMerged++] = tempResults;
+        }
     }
     
     return mergedResultsList;
