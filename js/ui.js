@@ -1715,7 +1715,12 @@ function setStyle()
 {
     giStyleSelectedIndex = getStyleIndex();
 
-    var sStyle = S_STYLE_ARRAY[giStyleSelectedIndex].toString();
+    var sStyle = S_IOS_7.toString();
+    
+    if ( S_STYLE_ARRAY[giStyleSelectedIndex] )
+    {
+        sStyle = S_STYLE_ARRAY[giStyleSelectedIndex].toString();
+    }
     
     // init
     $.os.ie = false;
